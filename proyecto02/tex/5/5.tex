@@ -39,8 +39,8 @@
     		\f V t = \Var{X_t} &= \Esp{X_t^2} - \Esp{X_t}^2\\
     		&= \Esp{\delta^2 t - 2 \delta t \SUM j 1 t \epsilon_j + \pare{\SUM j 1 t \epsilon_j}^2} - (\delta t)^2\\
     		&= \delta^2 t - 2\delta t \underbrace{\SUM j 1 t \Esp{\epsilon_j}}_{= 0} + \SUM i 1 t \SUM j 1 t \Esp{\epsilon_i \cdot \epsilon_j} - \delta^2 t^2.\\
-    		&= \delta^2 t - \SUM i 1 t \SUM j 1 t \Esp{\epsilon_i}\Esp{\epsilon_j} - \delta^2 t^2.\\
-    		&= \delta^2 t - t^2 \sigma^2 - \delta^2 t^2.
+    		&= \delta^2 t + \SUM j 1 t \Esp{\epsilon_j^2} + \underbrace{\SUM i 1 t \sum_{\substack{j=1\\i \neq j}}^t \Esp{\epsilon_i}\Esp{\epsilon_j}}_{\text{independencia}} - \delta^2 t^2.\\
+    		&= \delta^2 t + \sigma^2 t - \delta^2 t^2.
     	\end{align*}
     \end{demostracion}
     \vspace{1em}
@@ -51,6 +51,13 @@
     	\end{enumerate}
     \end{enunciado}
     \begin{demostracion}
-    	test
+    	\begin{definicion}
+            Sea $\llave{Z_t : t \in T}$ un proceso de segundo orden. Se dice que el proceso es \textbf{débilmente estacionario} si su función de media es constante y la función de covarianza entre $Z_t$ y $Z_s$ depende solo de la diferencia $t-s$. Es decir,
+                \begin{itemize}
+                    \item $\Esp {Z_t} = \mu,\ \paratodo t \in T$.
+                    \item $\f C {t,s} = \Cov{Z_t,Z_s} = C(t-s),\ \paratodo t,s \in T$.
+                \end{itemize}
+    	\end{definicion}
+        Observe que la función de medias no es constante, por tanto no es débilmente estacionario.
     \end{demostracion}
 \end{document}

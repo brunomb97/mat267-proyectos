@@ -43,7 +43,11 @@
             	&= \frac 1 2 \cdot \Esp{\pare{(\beta_0 + \beta_1 (t+h) + \epsilon_{t+h}) - (\beta_0 + \beta_1 t + \epsilon_t)}^2}\\
             	&= \frac 1 2 \cdot \Esp{\pare{\beta_1 h + \epsilon_{t+h} - \epsilon_t}^2}\\
             	&= \frac 1 2 \cdot \Esp{\beta_1^2 h^2 + \epsilon^2_{t+h} + \epsilon^2_t + 2\beta_1 h \cdot \epsilon_{t+h} - 2\beta_1 h \cdot \epsilon_t - 2\epsilon_{t+h} \cdot \epsilon_{t}}\\
-            	&= \frac 1 2 \cdot \pare{\beta_1^2 h^2 + 2 \sigma^2 - 2 \Cov{\epsilon_{t+h},\epsilon_t}}
+            	&= \frac 1 2 \cdot \pare{\beta_1^2 h^2 + 2 \sigma^2 - 2 \Cov{\epsilon_{t+h},\epsilon_t}}\\
+            	&= \begin{funcionporpartes}{ll}
+                        \frac{\beta_1^2 h^2}{2} + \sigma^2, & \text{ si } h \neq 0,\\
+                        0, & \text{ si } h = 0.
+            	   \end{funcionporpartes}
             \end{align*}
 
     \end{demostracion}

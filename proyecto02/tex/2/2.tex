@@ -12,7 +12,19 @@
 
     \end{enunciado}
     \begin{demostracion}
-        test
+        Utilizando la función generadora de momentos dada por
+            \begin{align*}
+                \f {M_X} t := \Esp{e^{tX}},\ \paratodo t \in \R.
+            \end{align*}
+        Luego, la función generadora de momentos para $X \sim \f N {\mu,\sigma^2}$ estará dada por
+            \begin{align*}
+                \f {M_X} t = \f \exp {\mu t + \frac 1 2 \sigma^2 t^2}
+            \end{align*}
+        Entonces
+            \begin{align*}
+                \f {\mu_Y} t = \Esp{Y_t} = \Esp {\f \exp {X_t}} = \f {M_X} 1 = \f \exp {\f {\mu_X}{t} + \frac 1 2 \f {C_X}{0}}.
+            \end{align*}
+
     \end{demostracion}
     \vspace{1em}
     \begin{enunciado}
