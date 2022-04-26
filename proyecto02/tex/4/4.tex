@@ -1,0 +1,21 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+    \begin{enunciado}
+        Describa que hace exactamente la siguiente rutina en R.
+        \begin{minted}{r}
+            x=rnorm(200,0,1)
+            y=vector(mode="numeric", length=200)
+            for (i in 2:200){
+            y[i]=0.5*y[i-1]+x[i]
+            }
+            par(mfrow=c(1,2),pty = "s")
+            plot.ts(y)
+            acf(y)
+        \end{minted}
+    \end{enunciado}
+    
+    \begin{demostracion}
+        test
+    \end{demostracion}
+
+\end{document}

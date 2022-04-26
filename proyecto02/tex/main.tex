@@ -1,0 +1,123 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+
+
+% Titulo / Autor
+\newcommand{\Titulo}{Proyecto 2}
+
+\usepackage[pdfusetitle]{hyperref}
+
+\title{\Titulo\ -\ \Sigla\ \Ramo}
+\author{\NombreI - \NombreII}
+
+\topmargin = -23pt                      
+\headheight = 15pt                     
+\headsep = 25pt                        
+\footskip = 5pt                   
+\setlength{\parindent}{.6cm}           
+\linespread{1.04}                        
+\textwidth = 480pt                   
+\textheight = 660pt                   
+\hoffset = 0pt                  
+\voffset = 0pt                 
+\evensidemargin = 0pt                  
+\oddsidemargin = 0pt                    
+
+\usepackage{parskip}
+
+\usepackage[brazil,spanish]{babel}
+
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage[usenames]{color}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{subfiles}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{calc}
+
+\usepackage{bbm}
+\usepackage[notquote]{hanging}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{minted}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{latexsym}
+\usepackage{dsfont}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\titleformat{\section}{\LARGE\bfseries}{}{0em}{}
+\numberwithin{equation}{section}
+
+% Comandos personalizados
+\usepackage{custom}
+\usepackage{names}
+\newcommand{\Esp}[1]{\mathbb{E} \left[ #1 \right]}
+\newcommand{\Var}[1]{\mathbb{V} \left[ #1 \right]}
+
+\begin{document}
+\thispagestyle{empty}
+\subfile{header.tex}
+
+\begin{center}
+    \huge{\textsc{\Ramo\\ \Titulo}}
+\end{center}
+
+\vspace{1em}
+
+\subfile{signature.tex}
+
+\section{Problema 1}
+\vspace{0.8em}
+    \subfile{1/1.tex}
+\clearpage
+
+\section{Problema 2}
+\vspace{0.8em}
+    \subfile{2/2.tex}
+\clearpage
+
+\section{Problema 3}
+\vspace{0.8em}
+    \subfile{3/3.tex}
+\clearpage
+
+\section{Problema 4}
+\vspace{0.8em}
+    \subfile{4/4.tex}
+\clearpage
+
+\section{Problema 5}
+\vspace{0.8em}
+    \subfile{5/5.tex}
+\clearpage
+
+\section{Problema 6}
+\vspace{0.8em}
+    \subfile{6/6.tex}
+\clearpage
+
+\section{Problema 7}
+\vspace{0.8em}
+    \subfile{7/7.tex}
+\clearpage
+\end{document}
