@@ -6,13 +6,21 @@
             \item Escriba la ecuación del proceso $X_t$ como sigue
                 \begin{align}
                     \label{5:eq}
-                	X_t = \delta t + \SUM j 1 t \epsilon_t.
+                	X_t = \delta t + \SUM j 1 t \epsilon_j.
                 \end{align}
         \end{enumerate}
 
     \end{enunciado}
     \begin{demostracion}
-        test
+        Observe que $X_t$ puede escribirse como (\ref{5:eq}). En efecto,
+            \begin{itemize}
+            	\item Para $t = 1$, se tendrá $X_t = \delta + \epsilon_1$.
+            	\item Suponga que la igualdad se tiene para $t - 1$. Luego para $t$ se tendrá
+                    \begin{align*}
+                    	X_t = \delta + X_{t-1} + \epsilon_t = \delta + \delta (t-1) + \SUM j 1 {t-1} \epsilon_j + \epsilon_t = \delta t + \SUM j 1 t \epsilon_j,
+                    \end{align*}
+            \end{itemize}
+        probando la equivalencia de las ecuaciones.
     \end{demostracion}
     \vspace{1em}
     \begin{enunciado}
@@ -20,10 +28,20 @@
             \setcounter{enumi}{1}
     		\item Calcule $\f \mu t = \Esp {X_t}$ y $\f V t = \Var {X_t}$.
     	\end{enumerate}
-
     \end{enunciado}
     \begin{demostracion}
-    	test
+    	Observe que
+    	\begin{align*}
+    		\f \mu t = \Esp{X_t} = \Esp{\delta t} + \SUM j 1 t \Esp{\epsilon_j} = \delta t.
+    	\end{align*}
+    	Además,
+    	\begin{align*}
+    		\f V t = \Var{X_t} &= \Esp{X_t^2} - \Esp{X_t}^2\\
+    		&= \Esp{\delta^2 t - 2 \delta t \SUM j 1 t \epsilon_j + \pare{\SUM j 1 t \epsilon_j}^2} - (\delta t)^2\\
+    		&= \delta^2 t - 2\delta t \underbrace{\SUM j 1 t \Esp{\epsilon_j}}_{= 0} + \SUM i 1 t \SUM j 1 t \Esp{\epsilon_i \cdot \epsilon_j} - \delta^2 t^2.\\
+    		&= \delta^2 t - \SUM i 1 t \SUM j 1 t \Esp{\epsilon_i}\Esp{\epsilon_j} - \delta^2 t^2.\\
+    		&= \delta^2 t - t^2 \sigma^2 - \delta^2 t^2.
+    	\end{align*}
     \end{demostracion}
     \vspace{1em}
     \begin{enunciado}

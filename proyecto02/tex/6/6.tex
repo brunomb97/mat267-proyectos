@@ -11,7 +11,22 @@
     \end{enunciado}
     
     \begin{demostracion}
-        test
+        Como $X_t$ es un ruido blanco, entonces $\Esp {X_t} = 0$ y, por tanto,
+            \begin{align*}
+            	\Var {X_t} = \Esp{X_t^2} - \Esp{X_t}^2 = \Esp{X_t^2},\quad \paratodo t.
+            \end{align*}
+        Luego,
+            \begin{align*}
+            	\f {\gamma_X} h &= \frac 1 2 \Esp{\pare{X_{t+h} - X_t}^2}\\
+            	&= \frac 1 2 \Esp{X_{t+h}^2 - 2 X_{t+h}X_t - X_t^2}\\
+            	&= \frac 1 2 \pare{\Esp{X_{t+h}^2} - 2 \Esp{X_{t+h}X_t} + \Esp{X_t^2}}\\
+            	&= \frac 1 2 \pare{\sigma^2 - 2 \Cov {X_{t+h},X_t} + \sigma^2}\\
+            	&= \begin{funcionporpartes}{cc}
+                        \sigma^2, & \text{ si } h \neq 0,\\
+                        0, & \text{si } h = 0.
+            	   \end{funcionporpartes}
+            \end{align*}
+
     \end{demostracion}
     \vspace{1em}
     \begin{enunciado}
@@ -22,7 +37,15 @@
     \end{enunciado}
     
     \begin{demostracion}
-    	test
+    	Se tendrá que
+            \begin{align*}
+            	\f {\gamma_X} h &= \frac 1 2 \cdot \Esp{\pare{X_{t+h} - X_t}^2}\\
+            	&= \frac 1 2 \cdot \Esp{\pare{(\beta_0 + \beta_1 (t+h) + \epsilon_{t+h}) - (\beta_0 + \beta_1 t + \epsilon_t)}^2}\\
+            	&= \frac 1 2 \cdot \Esp{\pare{\beta_1 h + \epsilon_{t+h} - \epsilon_t}^2}\\
+            	&= \frac 1 2 \cdot \Esp{\beta_1^2 h^2 + \epsilon^2_{t+h} + \epsilon^2_t + 2\beta_1 h \cdot \epsilon_{t+h} - 2\beta_1 h \cdot \epsilon_t - 2\epsilon_{t+h} \cdot \epsilon_{t}}\\
+            	&= \frac 1 2 \cdot \pare{\beta_1^2 h^2 + 2 \sigma^2 - 2 \Cov{\epsilon_{t+h},\epsilon_t}}
+            \end{align*}
+
     \end{demostracion}
 
 \end{document}

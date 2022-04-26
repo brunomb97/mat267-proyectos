@@ -2,14 +2,22 @@
 \begin{document}
     \begin{enunciado}
     	Sea $\f {C_X} \cdot$ la función de covarianza asociada a un proceso de media nula. Si
-            \begin{align*}
+            \begin{align}
+                \label{1:hipotesis}
             	\f {C_X} t = \f {C_X} 0,
-            \end{align*}
+            \end{align}
         para algún $t > 0$. Demuestre que $\f {C_X} \cdot$ es periódica.
     \end{enunciado}
 
     \begin{demostracion}
-        test
+        Observe que
+            \begin{align*}
+            	\f {\gamma_X} h &= \frac 1 2 \Esp{\pare{X_{t+h} - X_t}^2}\\
+            	&= \frac 1 2 \pare{\Esp{X_{t+h}^2} - 2 \Esp{X_{t+h}X_t} + \Esp{X_t^2}}\\
+            	&= \frac 1 2 \pare{\f {C_X} 0 - 2 \f {C_X} h + \f {C_X} 0}\\
+            	&= \f {C_X} 0 - \f {C_X} h.
+            \end{align*}
+        Por (\ref{1:hipotesis}), se tendrá que $\f {C_X} t = \f {C_X} 0$ y, por tanto, $\f {\gamma_X} T = \f {C_X} 0 - \f {C_X} T = 0$.
     \end{demostracion}
 
 \end{document}
