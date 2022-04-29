@@ -7,9 +7,8 @@
                 Y_t = \f {\exp} {X_t},\quad t \in T.
             \end{align}
         \begin{enumerate}
-        	\item Exprese la media del proceso $Y_t$ en términos de $\mu_X$ y $\f C 0$.
+        	\item Exprese la media del proceso $Y_t$ en términos de $\mu_X$ y $\f {C_X} 0$.
         \end{enumerate}
-
     \end{enunciado}
     \begin{demostracion}
         Utilizando la función generadora de momentos dada por
@@ -20,11 +19,10 @@
             \begin{align*}
                 \f {M_X} t = \f \exp {\mu t + \frac 1 2 \sigma^2 t^2}
             \end{align*}
-        Entonces
+        Entonces, como $X_t \sim \f N {\mu_X, \f {C_X} {0}}$
             \begin{align*}
-                \f {\mu_Y} t = \Esp{Y_t} = \Esp {\f \exp {X_t}} = \f {M_X} 1 = \f \exp {\f {\mu_X}{t} + \frac 1 2 \f {C_X}{0}}.
+                \f {\mu_Y} t = \Esp{Y_t} = \Esp {\f \exp {X_t}} = \f {M_X} 1 = \f \exp {{\mu_X} + \frac 1 2 \f {C_X}{0}}.
             \end{align*}
-
     \end{demostracion}
     \vspace{1em}
     \begin{enunciado}
@@ -35,7 +33,26 @@
     \end{enunciado}
 
     \begin{demostracion}
-        test
+        Observe que
+            \begin{align*}
+            	\f {C_Y} h &= \Esp {Y_{t+h} \cdot Y_t} - \Esp{Y_{t+h}}\Esp{Y_t}\\
+            	&= \Esp {\f \exp {X_{t+h}} \f \exp {X_t}} - \f \exp{\mu_X + \frac 1 2 \f {C_X} 0}^2\\
+            	&= \Esp {\f \exp {X_{t+h} + X_t}} - \f \exp{2\mu_X + \f {C_X} 0}.
+            \end{align*}
+        Se tiene que la suma de distribuciones normales es una distribución normal. Por tanto,
+            \begin{align*}
+            	X_t + X_s \sim \f N {2 \mu_X, 2 \f {C_X} 0 + 2 \f {C_X} h}.
+            \end{align*}
+        De esta forma, su primer momento estará dado por
+            \begin{align*}
+            	\f {M_{X_{t+h}+X_t}} 1 = \Esp{\f \exp {X_{t+h}+X_t}} &= \f \exp {2 \mu_X + \frac 1 2 \pare{2 \f {C_X} 0 + 2 \f {C_X} h}}\\ &= \f \exp {2 \mu_X + \f {C_X} 0 + \f {C_X} h}.
+            \end{align*}
+        Por lo que finalmente se obtiene
+            \begin{align*}
+            	\f {C_Y} h &= \f \exp {2 \mu_X + \f {C_X} 0 + \f {C_X} h} - \f \exp{2\mu_X + \f {C_X} 0}\\
+            	&= \f \exp{2 \mu_X + \f {C_X} 0} \pare{\f \exp {\f {C_X} h} - 1}. \qed
+            \end{align*}
+
     \end{demostracion}
 
 \end{document}

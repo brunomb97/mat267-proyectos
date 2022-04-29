@@ -13,16 +13,24 @@
     \end{enunciado}
     
     \begin{demostracion}
-        Defina
-            \begin{align*}
-                X_t &= \begin{matriz}{ccccccc}
-                        1 & \f \cos {\frac{2\pi t}{T_1}} & \f \cos {\frac{2\pi t}{T_2}} & \f \cos {\frac{2\pi t}{T_3}} & \f \cos {\frac{2\pi t}{T_4}} & \f \cos {\frac{2\pi t}{T_5}} & \f \cos {\frac{2\pi t}{T_6}}
-                      \end{matriz}\\
-                \beta &= \begin{matriz}{ccccccc}
+        Defina las siguientes matrices
+            \begin{itemize}
+                \item $\ds \boldsymbol{Y} = \begin{matriz}{ccccccc}
+                        y_{t_1} & \cdots & y_{t_n}
+                      \end{matriz}^t$
+                \item $\ds \boldsymbol{X} = \begin{matriz}{ccccccc}
+                        1 & \f \cos {\frac{2\pi t_1}{T_1}} & \f \cos {\frac{2\pi t_1}{T_2}} & \f \cos {\frac{2\pi t_1}{T_3}} & \f \cos {\frac{2\pi t_1}{T_4}} & \f \cos {\frac{2\pi t_1}{T_5}} & \f \cos {\frac{2\pi t_1}{T_6}}\\
+                        \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+                        1 & \f \cos {\frac{2\pi t_n}{T_1}} & \f \cos {\frac{2\pi t_n}{T_2}} & \f \cos {\frac{2\pi t_n}{T_3}} & \f \cos {\frac{2\pi t_n}{T_4}} & \f \cos {\frac{2\pi t_n}{T_5}} & \f \cos {\frac{2\pi t_n}{T_6}}\\
+                      \end{matriz}$
+                \item $\ds \boldsymbol{\beta} = \begin{matriz}{ccccccc}
                         \beta_0 & \beta_1 & \beta_2 & \beta_3 & \beta_4 & \beta_5 & \beta_6
-                      \end{matriz}^t
-            \end{align*}
-
+                      \end{matriz}^t$
+                \item $\ds \boldsymbol{e} = \begin{matriz}{ccccccc}
+                        e_{t_1} & \cdots & e_{t_n}
+                      \end{matriz}^t$
+            \end{itemize}
+            Luego, (\ref{1:modelo}) puede ser escrito como $\boldsymbol{Y} = \boldsymbol{X} \boldsymbol{\beta} + \boldsymbol{e}$.
     \end{demostracion}
     \vspace{1em}
     \begin{enunciado}

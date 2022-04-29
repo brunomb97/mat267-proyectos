@@ -4,20 +4,33 @@
     	Sea $\f {C_X} \cdot$ la función de covarianza asociada a un proceso de media nula. Si
             \begin{align}
                 \label{1:hipotesis}
-            	\f {C_X} t = \f {C_X} 0,
+            	\f {C_X} T = \f {C_X} 0,
             \end{align}
-        para algún $t > 0$. Demuestre que $\f {C_X} \cdot$ es periódica.
+        para algún $T > 0$. Demuestre que $\f {C_X} \cdot$ es periódica.
     \end{enunciado}
 
     \begin{demostracion}
-        Observe que
+        Sea $h \in \mathbb{Z}$. Observe que
             \begin{align*}
             	\f {\gamma_X} h &= \frac 1 2 \Esp{\pare{X_{t+h} - X_t}^2}\\
             	&= \frac 1 2 \pare{\Esp{X_{t+h}^2} - 2 \Esp{X_{t+h}X_t} + \Esp{X_t^2}}\\
             	&= \frac 1 2 \pare{\f {C_X} 0 - 2 \f {C_X} h + \f {C_X} 0}\\
             	&= \f {C_X} 0 - \f {C_X} h.
             \end{align*}
-        Por (\ref{1:hipotesis}), se tendrá que $\f {C_X} t = \f {C_X} 0$ y, por tanto, $\f {\gamma_X} T = \f {C_X} 0 - \f {C_X} T = 0$.
+        Por (\ref{1:hipotesis}), se tendrá que $\f {C_X} T = \f {C_X} 0$ y, por tanto, $\f {\gamma_X} T = \f {C_X} 0 - \f {C_X} T = 0$.
+        Por otro lado, observe que
+            \begin{align*}
+            	\f {C_X} {h+T} - \f C h &= \Esp {X_{t+h+T}X_t} - \underbrace{\Esp{X_{t+h+T}}\Esp{X_t}}_{ = 0 \text{ (por media nula)}} - \Esp {X_{t+h}X_t} + \underbrace{\Esp{X_{t+h}}\Esp{X_t}}_{{ = 0 \text{ (por media nula)}}}\\
+                &= \Esp {X_{t+h+T}X_t - X_{t+h}X_t}\\
+                &= \Esp {X_t \pare{X_{t+h+T} - X_{t+h}}}
+            \end{align*}
+        Luego, utilizando la desigualdad de Cauchy-Schwartz, se tiene
+            \begin{align*}
+            	0 \leq \pare{\f {C_X} {h+T} - \f C h}^2 = \pare{\Esp {X_t \pare{X_{t+h+T} - X_{t+h}}}}^2 &\leq \Esp{X^2_t} \Esp{\pare{X_{t+h+T} - X_{t+h}}^2}\\
+            	&= \f {C_X} 0 \cdot 2 \f {\gamma_X} {T}\\
+            	&= 0.
+            \end{align*}
+        Esto indica que $\f {C_X} {h+T} - \f C h = 0$, y por tanto $\f {C_X} {h+T} = \f C h$ para todo $h \in \mathbb Z$ es arbitrario, concluyendo así que $\f {C_X} \cdot$ es periódica. $\qed$
     \end{demostracion}
 
 \end{document}

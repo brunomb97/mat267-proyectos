@@ -5,7 +5,35 @@
     \end{enunciado}
     
     \begin{demostracion}
-        test
+        Se utilizará el \textbf{Teorema 1.5.1} de \textit{Brockwell and Davis}.
+            \begin{teorema}[Caracterización de Funciones de Autocovarianza]
+                \label{3:teo}
+                Una función $\F C {\mathbb{Z}} \R$ es una función de autocovarianza de un proceso estacionario débil si y solo si es simétrica y semidefinida positiva.
+            \end{teorema}
+        Defina
+            \begin{align*}
+                \f {\ol C} h = \SUM k 1 n b_k \f {C_k} h. 
+            \end{align*}
+        Se probará que $\ol C$ es una función semidefinida positiva, es decir, para $m \in N$, $a_i \in \R$ y $t_i \in T$ con $i = \llave{1,...,m}$, entonces
+            \begin{align*}
+            	\SUM i 1 m \SUM j 1 m a_j a_j \pare{\SUM k 1 n b_k \f {C_k} {t_i - t_j}} \geq 0.
+            \end{align*}
+        Observe que
+            \begin{align*}
+            	\SUM i 1 m \SUM j 1 m a_i a_j \pare{\SUM k 1 n b_k \f {C_k} {t_i - t_j}} = \SUM k 1 n b_k \underbrace{\SUM i 1 m \SUM  j 1 m a_i a_j \f {C_k} {t_i-t_j}}_{\geq 0 \text{ pues $C_k$ covarianzas}}
+            \end{align*}
+        Como $b_k \geq 0$ para todo $k \in \llave{1,...,n}$. Luego, se tendrá una combinación lineal con coeficientes positivos de elementos positivos. Por tanto,
+            \begin{align*}
+            	\SUM i 1 m \SUM j 1 m a_i a_j \pare{\SUM k 1 n b_k \f {C_k} {t_i - t_j}} = \SUM k 1 n b_k \SUM i 1 m \SUM  j 1 m a_i a_j \f {C_k} {t_i-t_j} \geq 0
+            \end{align*}
+        probando así que $\ol C$ es una función semidefinida positiva. Bastará ver que $\ol C$ es simétrica, es decir
+            \begin{align*}
+            	\f {\ol C} h = \f {\ol C} {-h},\quad \paratodo h \in \mathbb{Z}.
+            \end{align*}
+        Sea $h \in Z$, luego
+            \begin{align*}
+            	\f {\ol C} h = \SUM k 1 n b_k \f {C_k} h = \SUM k 1 n b_k \f {C_k} {-h} = \f {\ol C} {-h}.
+            \end{align*}
+        pues $C_k$ son funciones de autocovarianza. Por tanto, $\ol C$. Finalmente, por el \textbf{Teorema \ref{3:teo}} se tiene finalmente $\ol C$ es también una función de covarianza. $\qed$.
     \end{demostracion}
-
 \end{document}
